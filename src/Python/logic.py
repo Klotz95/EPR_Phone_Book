@@ -104,11 +104,14 @@ class PhoneBook:
 
     """
 
-    def __init__(self):
+    def __init__(self, cur_book):
         """ This method will be called during the initialization process
 
         """
-        self.phonebook = list()
+        if(cur_book == None):
+            self.phonebook = list()
+        else:
+            self.phonebook = cur_book
 
     def add(self, first_name, last_name, street, zipcode, city, phone):
         """ This method adds an entry to the phonebook
