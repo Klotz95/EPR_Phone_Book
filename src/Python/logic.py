@@ -135,6 +135,22 @@ class PhoneBook:
         current_entry.set_zipcode = new_information["zipcode"]
         current_entry.set_phone = new_information["phone"]
 
+    def search(self, searchKey):
+        """ This method will search a specif phone entry. searchKey is a string
+            which contains the search request
+            As a return value there will be a list with all possible results
+
+        """
+        return_value = list()
+        for cur_contact in self.phonebook:
+            if(cur_contact.first_name.contains(searchKey) or \
+            cur_contact.last_name.contains(searchKey) or \
+            cur_contact.street.contains(searchKey) or \
+            cur_contact.city.contains(searchKey) or \
+            cur_contact.zipcode.contains(searchKey)or \
+            cur_contact.phone.contains(searchKey)):
+                return_value.append(cur_contact)
+        return return_value
     def sort(self, sort_method):
         """ This method will search for a phonebook entry.
             The search_method parameter is an integer value which describes the
