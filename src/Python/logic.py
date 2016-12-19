@@ -13,7 +13,7 @@ class Entry:
         setter and getter methods for all attributes
 
     """
-
+    
     def __init__(self, first_name, last_name, street, zipcode, city, phone):
         """ This method will be called to initilialize an object of this class
 
