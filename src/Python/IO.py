@@ -46,10 +46,12 @@ class FileManager:
         """
 
         cur_file = open(path, "w")
-        for cur_entry in cur_entries:
-            cur_file.write("<first_name>" + cur_entry.get_first_name() + \
-            "</first_name><last_name>" + cur_entry.get_last_name() + \
-            "</last_name><street>" + cur_entry.get_street() + "</street><zipcode>" + \
-            cur_entry.get_zipcode() + "</zipcode><city>" + cur_entry.get_city() + \
-            "</city><phone>" + cur_entry.get_phone())
+        if(cur_file != None):
+            for cur_entry in cur_entries:
+                cur_file.write("<first_name>" + cur_entry.get_first_name() + \
+                "</first_name><last_name>" + cur_entry.get_last_name() + \
+                "</last_name><street>" + cur_entry.get_street() + "</street><zipcode>" + \
+                cur_entry.get_zipcode() + "</zipcode><city>" + cur_entry.get_city() + \
+                "</city><phone>" + cur_entry.get_phone()
+            return True
         return False
