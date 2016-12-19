@@ -135,17 +135,17 @@ class PhoneBook:
         current_entry.set_zipcode = new_information["zipcode"]
         current_entry.set_phone = new_information["phone"]
 
-    def search(self, search_method):
+    def sort(self, sort_method):
         """ This method will search for a phonebook entry.
             The search_method parameter is an integer value which describes the
             column for searching.
 
-            search_method == 0 : first_name
-            search_method == 1 : last_name
-            search_method == 2 : street
-            search_method == 3 : city
-            search_method == 4 : zipcode
-            search_method == 5 : phone
+            sort_method == 0 : first_name
+            sort_method == 1 : last_name
+            sort_method == 2 : street
+            sort_method == 3 : city
+            sort_method == 4 : zipcode
+            sort_method == 5 : phone
 
             As a return value there will be a list with all results
 
@@ -155,35 +155,35 @@ class PhoneBook:
         for i in range(0, len(self.phonebook), 1):
             for k in range(i + 1, len(self.phonebook), 1):
                 for t in range(0, 3, 1):
-                    if(search_method == 0):
+                    if(sort_method == 0):
                         if(return_value[i].first_name[t] != \
                         return_value[k].first_name[t]):
                             if(return_value[i].first_name > \
                             return_value[k].first_name):
                                 return_value[i], return_value[k] = \
                                 return_value[k], return_value[i]
-                    elif(search_method == 1):
+                    elif(sort_method == 1):
                         if(return_value[i].last_name[t] != \
                         return_value[k].last_namet]):
                             if(return_value[i].last_name > \
                             return_value[k].last_name):
                                 return_value[i], return_value[k] = \
                                 return_value[k], return_value[i]
-                    elif(search_method == 2):
+                    elif(sort_method == 2):
                         if(return_value[i].street[t] != \
                         return_value[k].street[t]):
                             if(return_value[i].street > \
                             return_value[k].street):
                                 return_value[i], return_value[k] = \
                                 return_value[k], return_value[i]
-                    elif(search_method == 3):
+                    elif(sort_method == 3):
                         if(return_value[i].city[t] != \
                         return_value[k].city[t]):
                             if(return_value[i].city > \
                             return_value[k].city):
                                 return_value[i], return_value[k] = \
                                 return_value[k], return_value[i]
-                    elif(search_method == 4):
+                    elif(sort_method == 4):
                         if(return_value[i].zipcode[t] != \
                         return_value[k].zipcode[t]):
                             if(return_value[i].zipcode > \
