@@ -13,7 +13,7 @@ class Entry:
         setter and getter methods for all attributes
 
     """
-    
+
     def __init__(self, first_name, last_name, street, zipcode, city, phone):
         """ This method will be called to initilialize an object of this class
 
@@ -117,14 +117,14 @@ class PhoneBook:
         """ This method adds an entry to the phonebook
 
         """
-        self.phonebook.append(new Entry(first_name, last_name, street, \
+        self.phonebook.append(Entry(first_name, last_name, street, \
         zipcode, city, phone))
 
     def delete(self, index):
         """ This method deletes a phonebook entry
 
         """
-        self.phonebook.remove(index)
+        self.phonebook.remove(self.phonebook[index])
 
     def update(self, new_information, index):
         """ This method updates a phonebook entry
@@ -183,7 +183,7 @@ class PhoneBook:
                                 return_value[k], return_value[i]
                     elif(sort_method == 1):
                         if(return_value[i].last_name[t] != \
-                        return_value[k].last_namet]):
+                        return_value[k].last_name[t]):
                             if(return_value[i].last_name > \
                             return_value[k].last_name):
                                 return_value[i], return_value[k] = \
