@@ -2,7 +2,7 @@
 
 """
 
-__author__ = "6345060: Nico Kotlenga"
+__author__ = "6345060: Nico Kotlenga, 6293280: Umut Yilmaz"
 __copyright__ = "Copyright 2016 – EPR-Goethe-Uni"
 __email__ = "nico.kotlenga@stud.uni-frankfurt.de"
 
@@ -146,12 +146,12 @@ class PhoneBook:
         """
         return_value = list()
         for cur_contact in self.phonebook:
-            if(cur_contact.first_name.contains(searchKey) or \
-            cur_contact.last_name.contains(searchKey) or \
-            cur_contact.street.contains(searchKey) or \
-            cur_contact.city.contains(searchKey) or \
-            cur_contact.zipcode.contains(searchKey)or \
-            cur_contact.phone.contains(searchKey)):
+            if(cur_contact.first_name in searchKey or \
+            cur_contact.last_name in searchKey or \
+            cur_contact.street in searchKey or \
+            cur_contact.city in searchKey or \
+            cur_contact.zipcode in searchKey or \
+            cur_contact.phone in searchKey):
                 return_value.append(cur_contact)
         return return_value
     def sort(self, sort_method):

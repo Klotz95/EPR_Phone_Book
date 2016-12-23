@@ -2,7 +2,7 @@
 
 """
 
-__author__ = "6345060: Nico Kotlenga"
+__author__ = "6345060: Nico Kotlenga, 6293280: Umut Yilmaz"
 __copyright__ = "Copyright 2016 – EPR-Goethe-Uni"
 __email__ = "nico.kotlenga@stud.uni-frankfurt.de"
 
@@ -84,7 +84,6 @@ class Application(tk.Frame):
     def create_new_entry(self):
         # open the dialog
         dialog = tk.Toplevel(self)
-        dialog.title("About this State:")
         first_name_label = tk.Label(dialog, text = "First Name: ")
         first_name_entry = tk.Entry(dialog)
         first_name_label.grid(column = 0, row = 0)

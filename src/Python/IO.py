@@ -2,7 +2,7 @@
 
 """
 
-__author__ = "6345060: Nico Kotlenga"
+__author__ = "6345060: Nico Kotlenga, 6293280: Umut Yilmaz"
 __copyright__ = "Copyright 2016 – EPR-Goethe-Uni"
 __email__ = "nico.kotlenga@stud.uni-frankfurt.de"
 
