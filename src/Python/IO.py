@@ -6,7 +6,7 @@ __author__ = "6345060: Nico Kotlenga"
 __copyright__ = "Copyright 2016 – EPR-Goethe-Uni"
 __email__ = "nico.kotlenga@stud.uni-frankfurt.de"
 
-import Entry from logic.py
+from logic import Entry
 
 class FileManager:
     """ This class has methods to open and write phonebook save states
@@ -22,7 +22,7 @@ class FileManager:
             listOfEntries = list()
             for line in curFile:
                 # split the comoponents
-                first_name = line.split("<first_name>")[0].split("</first_name">)[0]
+                first_name = line.split("<first_name>")[0].split("</first_name>")[0]
                 line = line.split("<first_name>")[0].split("</first_name>")[1]
                 last_name = line.split("<last_name>")[0].split("</last_name>")[0]
                 line = line.split("<last_name>")[0].split("</last_name>")[1]
@@ -33,7 +33,7 @@ class FileManager:
                 city = line.split("<city>")[0].split("</city>")[0]
                 line = line.split("<city>")[0].split("</city>")[1]
                 phone = line.split("<phone>")[0].split("</phone>")[0]
-                listOfEntries.append(new Entry(first_name, last_name, street, \
+                listOfEntries.append(Entry(first_name, last_name, street, \
                 zipcode, city, phone))
             curFile.close()
             return listOfEntries
@@ -52,6 +52,6 @@ class FileManager:
                 "</first_name><last_name>" + cur_entry.get_last_name() + \
                 "</last_name><street>" + cur_entry.get_street() + "</street><zipcode>" + \
                 cur_entry.get_zipcode() + "</zipcode><city>" + cur_entry.get_city() + \
-                "</city><phone>" + cur_entry.get_phone()
+                "</city><phone>" + cur_entry.get_phone())
             return True
         return False
