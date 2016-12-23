@@ -216,3 +216,88 @@ class PhoneBook:
                             return_value[k].phone):
                                 return_value[i], return_value[k] = \
                                 return_value[k], return_value[i]
+
+""" TESTCASES
+
+Testing Entry class
+
+>>> new = Entry('Max', 'Mustermann', 'Musterstreet', '67349', 'Mustercity', '098234')
+
+>>> new.get_first_name
+<bound method Entry.get_first_name of <__main__.Entry object at 0x03E40F90>>
+>>> new.get_last_name
+<bound method Entry.get_last_name of <__main__.Entry object at 0x03E40F90>>
+>>> new.get_phone
+<bound method Entry.get_phone of <__main__.Entry object at 0x03E40F90>>
+>>> new.get_street
+<bound method Entry.get_street of <__main__.Entry object at 0x03E40F90>>
+>>> new.get_zipcode
+<bound method Entry.get_zipcode of <__main__.Entry object at 0x03E40F90>>
+
+Testing setter method.
+
+>>> new.set_first_name('Maximilian')
+>>> new.first_name
+'Maximilian'
+>>> new.set_last_name('Mustermanno')
+>>> new.last_name
+'Mustermanno'
+>>> new.set_street('Musterstreet12')
+>>> new.street
+'Musterstreet12'
+>>> new.set_zipcode('007')
+>>> new.zipcode
+'007'
+>>> new.set_city('Changedtown')
+>>> new.city
+'Changedtown'
+>>> new.set_phone('911')
+>>> new.phone
+'911'
+
+Testing PhoneBook class
+
+#Creating new PhoneBook object new_pb
+
+>>> new_pb = PhoneBook(None)
+Given the parameter None the __init__ will create an empty list called cur_book
+
+Adding Entry
+>>> new_pb.add('Max', 'Mustermann', 'Musterstreet', '67349', 'Mustercity', '098234')
+>>> new_pb.phonebook
+[<__main__.Entry object at 0x03BD0D50>]
+
+Removing Entry
+>>> new_pb.delete(0)
+deletes the first and only entry in this example, which leaves us with the empty list.
+>>> new_pb.phonebook
+[]
+
+
+Update Entry
+>>> new_pb.add('Max', 'Mustermann', 'Musterstreet', '67349', 'Mustercity', '098234')
+>>> new_pb.phonebook
+[<__main__.Entry object at 0x03BD0D50>]
+>>> __main__.Entry.get_first_name
+Traceback (most recent call last):
+  File "<pyshell#36>", line 1, in <module>
+    __main__.Entry.get_first_name
+NameError: name '__main__' is not defined
+>>> new_pb.update('Maximus', 0)
+Traceback (most recent call last):
+  File "<pyshell#37>", line 1, in <module>
+    new_pb.update('Maximus', 0)
+  File "C:\Users\diego\Google Drive\CS\WS1617\EPR\EPR_Blatt5_Umut_Yilmaz\EPR_05_final\EPR_Phone_Book-master\EPR_Phone_Book-master\src\Python\logic.py", line 134, in update
+    current_entry.set_first_name = new_information["firstName"]
+TypeError: string indices must be integers
+
+
+Search Entry
+new_pb.search('Max')
+[<__main__.Entry object at 0x03BD0D50>]
+
+
+Sort Entry
+>>> new_pb.add('Clark', 'Kent', 'Metrostreet', '0010', 'Metropolis', '098')
+>>> new_pb.sort(0)
+"""
